@@ -67,7 +67,7 @@ public class EmuLinkerMasterUpdateTask implements MasterListUpdateTask
 		params[6] = new NameValuePair("maxUsers", Integer.toString(kailleraServer.getMaxUsers()));
 		params[7] = new NameValuePair("numGames", Integer.toString(kailleraServer.getNumGames()));
 		params[8] = new NameValuePair("maxGames", Integer.toString(kailleraServer.getMaxGames()));
-		params[9] = new NameValuePair("version", "ESF" + releaseInfo.getVersionString());
+		params[9] = new NameValuePair("version", "EOS" + releaseInfo.getVersionString());
 
 		HttpMethod meth = new GetMethod(url);
 		meth.setQueryString(params);
