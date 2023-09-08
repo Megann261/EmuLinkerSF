@@ -437,7 +437,7 @@ public class KailleraServerImpl implements KailleraServer, Executable
 		}
 		
 		//new SF MOD - Username filter
-		if((user.getName().equals("Server") || user.getName().toLowerCase().contains("|")) || (access == AccessManager.ACCESS_NORMAL && (user.getName().toLowerCase().contains("www.") || user.getName().toLowerCase().contains("http://") || user.getName().toLowerCase().contains("https://") || user.getName().toLowerCase().contains("\\") || user.getName().toLowerCase().contains(" ") || user.getName().toLowerCase().contains("­"))))
+		if((user.getName().equals("Server") || user.getName().toLowerCase().contains("|")) || (access == AccessManager.ACCESS_NORMAL && (user.getName().toLowerCase().contains("www.") || user.getName().toLowerCase().contains("http://") || user.getName().toLowerCase().contains("https://") || user.getName().toLowerCase().contains("\\") || user.getName().toLowerCase().contains("Â ") || user.getName().toLowerCase().contains("Â­"))))
 		{
 			log.info(user + " login denied: Illegal characters in UserName");
 			users.remove(userListKey);
@@ -608,7 +608,7 @@ public class KailleraServerImpl implements KailleraServer, Executable
 			userImpl.addEvent(new InfoMessageEvent(user, EmuLang.getString("KailleraServerImpl.AdminWelcomeMessage")));
 		
 		try { Thread.sleep(20); } catch(Exception e) {}
-		userImpl.addEvent(new InfoMessageEvent(user, getReleaseInfo().getProductName() + " v" + getReleaseInfo().getVersionString() + ": " + getReleaseInfo().getReleaseDate() + " - Visit: https://god-weapon.github.io"));		
+		userImpl.addEvent(new InfoMessageEvent(user, getReleaseInfo().getProductName() + " v" + getReleaseInfo().getVersionString() + ": " + getReleaseInfo().getReleaseDate() + " - Visit: https://emulinker.org"));		
 		
 		try { Thread.sleep(20); } catch(Exception e) {}
 		addEvent(new UserJoinedEvent(this, user));
@@ -642,7 +642,7 @@ public class KailleraServerImpl implements KailleraServer, Executable
 		
 		int access = user.getServer().getAccessManager().getAccess(user.getSocketAddress().getAddress());
 		if (access < AccessManager.ACCESS_SUPERADMIN && user.getServer().getAccessManager().isSilenced(user.getSocketAddress().getAddress())){
-			quitMsg = "https://god-weapon.github.io";
+			quitMsg = "https://emulinker.org";
 		}
 
 		log.info(user + " quit: " + quitMsg);
@@ -679,7 +679,7 @@ public class KailleraServerImpl implements KailleraServer, Executable
 		}
 
 		message = message.trim();
-		if (message.length() == 0 || message.startsWith(" ") || message.startsWith("­"))
+		if (message.length() == 0 || message.startsWith("Â ") || message.startsWith("Â­"))
 			return;
 
 		if (access == AccessManager.ACCESS_NORMAL)
