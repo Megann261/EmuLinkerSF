@@ -20,3 +20,4 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant build
+ 
