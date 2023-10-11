@@ -15,7 +15,7 @@ public final class KailleraServerReleaseInfo implements ReleaseInfo
 	private final int		minorVersion	= 94;
 	private final int		buildNumber		= 0;
 
-	private final String	releaseDate		= "10-111-2023";
+	private final String	releaseDate		= "10-11-2023";
 	private final String	licenseInfo		= "Usage of this sofware is subject to the terms found in the included license";
 	private final String	website			= "https://emulinker.org";
 
