@@ -20,8 +20,3 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant build
-   - name: Upload artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: package94
-        path: EmuLinkerSF/package94/**
